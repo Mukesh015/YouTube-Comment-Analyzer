@@ -2,7 +2,7 @@ from googleapiclient.discovery import build
 import re
 import emoji
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-from flask_socketio import SocketIO, emit
+
 from flask import Flask, request, render_template, jsonify ,make_response
 from flask_cors import CORS, cross_origin
 import os
