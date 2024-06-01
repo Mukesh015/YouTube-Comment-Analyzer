@@ -74,8 +74,9 @@ def analyzed():
             uploader_channel_id = video_snippet['channelId']
 
             response_data['channelId'] = uploader_channel_id
+            print(f"Video Id: {video_id} Channel: {uploader_channel_id}")
             response_data['status'] = "Fetching comments..."
-
+            print("Fetching comments...")
             comments = []
             nextPageToken = None
             while len(comments) < 600:
@@ -120,7 +121,8 @@ def analyzed():
                     f.write(str(comment) + "\n")
 
             response_data['status'] = "Comments stored successfully!"
-
+            print ("Comments stored successfully!")
+            
             polarity = []
             positive_comments = []
             negative_comments = []
@@ -128,9 +130,12 @@ def analyzed():
 
             with open(f"./comment/ytcomments_{user}.txt", 'r', encoding='utf-8') as f:
                 response_data['status'] = "Reading Comments..."
+                print("Reading Comments...")
+              
                 comments = f.readlines()
-
             response_data['status'] = "Analysing Comments..."
+            print("Analysing Comments...")
+           
             for items in comments:
                 polarity = sentiment_scores(items, polarity)
 
@@ -158,14 +163,13 @@ def analyzed():
             response_data['positiveComments'] = positive_count
             response_data['negativeComments'] = negative_count
             response_data['neutralComments'] = neutral_count
-            return jsonify(response_data)
 
       
     except Exception as e:
         print(e)
         response_data['Error'] = "Invalid videoId or username"
-        return jsonify(response_data)
-if __name__ == '__main__':
+        
 
-    app.run(debug=True)
-    socketio.run(app)
+    return jsonify(response_data)
+    
+
