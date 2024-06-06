@@ -1,0 +1,14 @@
+{
+  "name": "YouTube Comment Analyzer",
+  "version": "1.0.0",
+  "description": "Analyze YouTube comments",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "logo.png"
+  },
+  "permissions": ["activeTab"],
+  "icons": {
+    "128": "logo.png"
+  }
+}
