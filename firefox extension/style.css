@@ -1,0 +1,97 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 250px;
+  background-color: #f9f9f9;
+}
+
+.container {
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.warning-block {
+  display: flex;
+  align-items: flex-start;
+}
+
+.warning-icon {
+  margin-right: 10px;
+}
+
+.heading-text {
+  color: #d6391a;
+  font-weight: bold;
+}
+
+.comments-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.comment-block {
+  display: flex;
+  align-items: center;
+}
+
+.comment-block svg {
+  margin-right: 10px;
+}
+
+.pos-svg {
+  fill: #28a745;
+}
+
+.neg-svg {
+  fill: #dc3545;
+}
+
+.neutral-svg {
+  fill: #e4e80e;
+}
+
+.pos-result,
+.neg-result,
+.neutral-result {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.comment-type {
+  font-weight: bold;
+}
+
+.percentage {
+  font-size: 1.2em;
+  margin-top: 5px;
+}
+
+.refresh-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.refresh-btn {
+  padding: 12px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, fill 0.2s, background-color 0.2s;
+  cursor: pointer;
+}
+
+.refresh-btn:hover {
+  transform: scale(1.1);
+  fill: #1a75ff;
+  background-color: #e0e0e0;
+}
