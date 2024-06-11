@@ -19,55 +19,42 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("neutral-percentage").textContent = "N/A";
   };
 
-  const fetchData = async (url) => {
+  const updateComments = (data) => {
+    const responseData = JSON.parse(data);
+    document.getElementById("positive-percentage").textContent = responseData.positiveComments + "%";
+    document.getElementById("negative-percentage").textContent = responseData.negativeComments + "%";
+    document.getElementById("neutral-percentage").textContent = responseData.neutralComments + "%";
+  };
+
+  const fetchData = (url) => {
     console.log("Fetching data for ", url);
-    try {
-      const response = await fetch(
-        "https://youtube-comment-analysis-9e60.onrender.com/get-analyzed-comment",
-        {
-          method: "POST", // Use POST method
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            userName: username,
-            videoUrl: url,
-          }), // Send username and video URL in the body
-        }
-      );
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
+    const eventSource = new EventSource('/get-analyzed-comment');
+
+    eventSource.onmessage = function (event) {
+      const data = event.data;
+
+      if (data.startsWith('{')) {
+        updateComments(data);
+        eventSource.close();
+      } else {
+        console.log("Status update: ", data);
       }
+    };
 
-      const data = await response.json();
-
-      // Assuming the API returns an object with `positiveComments`, `negativeComments`, and `neutralComments` properties
-      let positivePercentage = data.positiveComments;
-      let negativePercentage = data.negativeComments;
-      let neutralPercentage = data.neutralComments;
-
-      console.log(
-        "positive comments: ",
-        positivePercentage,
-        "negative comments: ",
-        negativePercentage,
-        "neutral comments: ",
-        neutralPercentage
-      );
-
-      // Update the DOM elements with the fetched data
-      document.getElementById("positive-percentage").textContent =
-        positivePercentage + "%";
-      document.getElementById("negative-percentage").textContent =
-        negativePercentage + "%";
-      document.getElementById("neutral-percentage").textContent =
-        neutralPercentage + "%";
-      document.getElementById("error-message").style.display = "none"; // Hide error message
-    } catch (error) {
+    fetch("http://127.0.0.1:5000/get-analyzed-comment", {
+      method: "POST", // Use POST method
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userName: username,
+        videoUrl: url,
+      }), // Send username and video URL in the body
+    }).catch((error) => {
       console.error("Error fetching data:", error);
       showErrorMessage();
-    }
+    });
   };
 
   // Function to extract tab URL using Chrome Extension API
