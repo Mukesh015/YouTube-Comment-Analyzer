@@ -1,19 +1,30 @@
-from googleapiclient.discovery import build
 import re
 import emoji
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
-from flask import Flask, request, jsonify, Response, stream_with_context
-from flask_cors import CORS, cross_origin
+from fastapi import FastAPI, HTTPException, BackgroundTasks
+from fastapi.middleware.cors import CORSMiddleware
 import os
 from dotenv import load_dotenv
+from pydantic import BaseModel
+from googleapiclient.discovery import build
 
-app = Flask(__name__)
-cors = CORS(app)
-app.config['SECRET_KEY'] = 'secret!'
+app = FastAPI()
 load_dotenv()
-
+origins = ["*"]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 API_KEY = os.getenv("API_KEY")
 youtube = build('youtube', 'v3', developerKey=API_KEY)
+response_data = {}
+
+class CommentRequest(BaseModel):
+    videoUrl: str
+    userName: str
 
 def sentiment_scores(comment, polarity):
     sentiment_object = SentimentIntensityAnalyzer()
@@ -69,89 +80,77 @@ def analyze_comments(comments):
             neutral_comments.append(comment)
     return polarity, positive_comments, negative_comments, neutral_comments
 
-@app.route('/get-analyzed-comment', methods=['POST'])
-@cross_origin()
-def analyzed():
-    req_data = request.get_json()
-    response_data = {}
+@app.post('/get-analyzed-comment')
+async def analyzed(comment_request: CommentRequest, background_tasks: BackgroundTasks):
     try:
-        if req_data:
-            video_url = req_data.get('videoUrl')
-            user = req_data.get('userName')
+        video_url = comment_request.videoUrl
+        user = comment_request.userName
 
-            regular_pattern = re.compile(r'(?:https?://)?(?:www\.)?(?:youtube\.com/watch\?v=|youtu\.be/)([\w-]+)(?:&\S+)?')
-            shorts_pattern = re.compile(r'(?:https?://)?(?:www\.)?youtube\.com/shorts/([\w-]+)(?:&\S+)?')
+        regular_pattern = re.compile(r'(?:https?://)?(?:www\.)?(?:youtube\.com/watch\?v=|youtu\.be/)([\w-]+)(?:&\S+)?')
+        shorts_pattern = re.compile(r'(?:https?://)?(?:www\.)?youtube\.com/shorts/([\w-]+)(?:&\S+)?')
 
-            match_regular = regular_pattern.match(video_url)
-            match_shorts = shorts_pattern.match(video_url)
-            if match_regular:
-                video_id = match_regular.group(1)
-            elif match_shorts:
-                video_id = match_shorts.group(1)
+        match_regular = regular_pattern.match(video_url)
+        match_shorts = shorts_pattern.match(video_url)
+        if match_regular:
+            video_id = match_regular.group(1)
+        elif match_shorts:
+            video_id = match_shorts.group(1)
+        else:
+            video_id = "invalid"
+
+        response_data['videoId'] = video_id
+        if video_id == "invalid":
+            raise HTTPException(status_code=400, detail="Invalid video URL")
+
+        def process_comments():
+            video_response = youtube.videos().list(
+                part='snippet',
+                id=video_id
+            ).execute()
+
+            video_snippet = video_response['items'][0]['snippet']
+            uploader_channel_id = video_snippet['channelId']
+            response_data['channelId'] = uploader_channel_id
+
+            comments = fetch_comments(video_id, uploader_channel_id)
+
+            relevant_comments = filter_comments(comments)
+            if not relevant_comments:
+                raise HTTPException(status_code=404, detail="No relevant comments found")
+
+            with open(f"./comment/ytcomments_{user}.txt", 'w', encoding='utf-8') as f:
+                for comment in relevant_comments:
+                    f.write(comment + "\n")
+
+            polarity, positive_comments, negative_comments, neutral_comments = analyze_comments(relevant_comments)
+
+            if len(polarity) == 0:
+                raise HTTPException(status_code=404, detail="No comments to analyze")
+
+            avg_polarity = sum(polarity) / len(polarity)
+            response_data['averagePolarity'] = avg_polarity
+
+            if avg_polarity > 0.05:
+                response_data['status'] = "The Video has a Positive response"
+            elif avg_polarity < -0.05:
+                response_data['status'] = "The Video has a Negative response"
             else:
-                video_id = "invalid"
+                response_data['status'] = "The Video has a Neutral response"
 
-            response_data['videoId'] = video_id
-            if video_id == "invalid":
-                raise ValueError("Invalid video URL")
-
-            @stream_with_context
-            def generate_status_updates():
-                try:
-                    with app.app_context():
-                        video_response = youtube.videos().list(
-                            part='snippet',
-                            id=video_id
-                        ).execute()
-
-                        video_snippet = video_response['items'][0]['snippet']
-                        uploader_channel_id = video_snippet['channelId']
-                        response_data['channelId'] = uploader_channel_id
-                        yield "data: Fetching comments...\n\n"
-
-                        comments = fetch_comments(video_id, uploader_channel_id)
-                        yield f"data: Fetched {len(comments)} comments\n\n"
-
-                        relevant_comments = filter_comments(comments)
-                        if not relevant_comments:
-                            raise ValueError("No relevant comments found")
-
-                        with open(f"./comment/ytcomments_{user}.txt", 'w', encoding='utf-8') as f:
-                            for comment in relevant_comments:
-                                f.write(comment + "\n")
-
-                        yield "data: Comments stored successfully!\n\n"
-                        yield "data: Analyzing Comments...\n\n"
-
-                        polarity, positive_comments, negative_comments, neutral_comments = analyze_comments(relevant_comments)
-
-                        if len(polarity) == 0:
-                            raise ValueError("No comments to analyze")
-
-                        avg_polarity = sum(polarity) / len(polarity)
-                        response_data['averagePolarity'] = avg_polarity
-
-                        if avg_polarity > 0.05:
-                            response_data['status'] = "The Video has a Positive response"
-                        elif avg_polarity < -0.05:
-                            response_data['status'] = "The Video has a Negative response"
-                        else:
-                            response_data['status'] = "The Video has a Neutral response"
-
-                        response_data['positiveComments'] = len(positive_comments)
-                        response_data['negativeComments'] = len(negative_comments)
-                        response_data['neutralComments'] = len(neutral_comments)
-                        
-                        yield "data: Analysis complete\n\n"
-                        yield f"data: {jsonify(response_data).get_data(as_text=True)}\n\n"
-                except Exception as e:
-                    yield f"data: Error: {str(e)}\n\n"
-
-            return Response(generate_status_updates(), mimetype='text/event-stream')
+            response_data['positiveComments'] = len(positive_comments)
+            response_data['negativeComments'] = len(negative_comments)
+            response_data['neutralComments'] = len(neutral_comments)
+            # response_data['positiveCommentsList'] = positive_comments
+            # response_data['negativeCommentsList'] = negative_comments
+            # response_data['neutralCommentsList'] = neutral_comments
+            print("Positive comments",len(positive_comments),"Negative comments",len(negative_comments),"Neutral comments",len(neutral_comments))
+        background_tasks.add_task(process_comments)
+        return response_data
 
     except Exception as e:
-        response_data['Error'] = str(e)
-        return jsonify(response_data)
+        print(e)
+        return {"Error": str(e)}
 
 # if __name__ == '__main__':
-#     app.run(debug=True)
+#     import uvicorn
+#     uvicorn.run(app, host="0.0.0.0", port=8000)
