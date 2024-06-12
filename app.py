@@ -7,6 +7,7 @@ import os
 from dotenv import load_dotenv
 from pydantic import BaseModel
 from googleapiclient.discovery import build
+import asyncio
 
 app = FastAPI()
 load_dotenv()
@@ -32,7 +33,7 @@ def sentiment_scores(comment, polarity):
     polarity.append(sentiment_dict['compound'])
     return polarity
 
-def fetch_comments(video_id, uploader_channel_id):
+def fetch_comments(video_id, uploader_channel_id, user):
     comments = []
     nextPageToken = None
     while len(comments) < 600:
@@ -50,7 +51,7 @@ def fetch_comments(video_id, uploader_channel_id):
         nextPageToken = response.get('nextPageToken')
         if not nextPageToken:
             break
-    response_data['totalComments'] = len(comments)
+    response_data[user].update({'totalComments': len(comments)})
     return comments
 
 def filter_comments(comments):
@@ -87,6 +88,9 @@ async def analyzed(comment_request: CommentRequest, background_tasks: Background
         video_url = comment_request.videoUrl
         user = comment_request.userName
 
+        # Ensure the user key is initialized
+        response_data[user] = {}
+
         regular_pattern = re.compile(r'(?:https?://)?(?:www\.)?(?:youtube\.com/watch\?v=|youtu\.be/)([\w-]+)(?:&\S+)?')
         shorts_pattern = re.compile(r'(?:https?://)?(?:www\.)?youtube\.com/shorts/([\w-]+)(?:&\S+)?')
 
@@ -99,59 +103,70 @@ async def analyzed(comment_request: CommentRequest, background_tasks: Background
         else:
             video_id = "invalid"
 
-        response_data['videoId'] = video_id
+        response_data[user].update({'videoId': video_id})
         if video_id == "invalid":
             raise HTTPException(status_code=400, detail="Invalid video URL")
 
         def process_comments():
-            video_response = youtube.videos().list(
-                part='snippet',
-                id=video_id
-            ).execute()
+            try:
+                video_response = youtube.videos().list(
+                    part='snippet',
+                    id=video_id
+                ).execute()
 
-            video_snippet = video_response['items'][0]['snippet']
-            uploader_channel_id = video_snippet['channelId']
-            response_data['channelId'] = uploader_channel_id
+                video_snippet = video_response['items'][0]['snippet']
+                uploader_channel_id = video_snippet['channelId']
+                response_data[user].update({'channelId': uploader_channel_id})
 
-            comments = fetch_comments(video_id, uploader_channel_id)
+                comments = fetch_comments(video_id, uploader_channel_id, user)
 
-            relevant_comments = filter_comments(comments)
-            if not relevant_comments:
-                raise HTTPException(status_code=404, detail="No relevant comments found")
+                relevant_comments = filter_comments(comments)
+                if not relevant_comments:
+                    response_data[user].update({'status': "No relevant comments found"})
+                    return
 
-            with open(f"./comment/ytcomments_{user}.txt", 'w', encoding='utf-8') as f:
-                for comment in relevant_comments:
-                    f.write(comment + "\n")
+                with open(f"./comment/ytcomments_{user}.txt", 'w', encoding='utf-8') as f:
+                    for comment in relevant_comments:
+                        f.write(comment + "\n")
 
-            polarity, positive_comments, negative_comments, neutral_comments = analyze_comments(relevant_comments)
+                polarity, positive_comments, negative_comments, neutral_comments = analyze_comments(relevant_comments)
 
-            if len(polarity) == 0:
-                raise HTTPException(status_code=404, detail="No comments to analyze")
+                if len(polarity) == 0:
+                    response_data[user].update({'status': "No comments to analyze"})
+                    return
 
-            avg_polarity = sum(polarity) / len(polarity)
-            response_data['averagePolarity'] = avg_polarity
+                avg_polarity = sum(polarity) / len(polarity)
+                response_data[user].update({
+                    'averagePolarity': avg_polarity,
+                    'positiveComments': len(positive_comments),
+                    'negativeComments': len(negative_comments),
+                    'neutralComments': len(neutral_comments)
+                })
 
-            if avg_polarity > 0.05:
-                response_data['status'] = "The Video has a Positive response"
-            elif avg_polarity < -0.05:
-                response_data['status'] = "The Video has a Negative response"
-            else:
-                response_data['status'] = "The Video has a Neutral response"
+                if avg_polarity > 0.05:
+                    response_data[user].update({'status': "The Video has a Positive response"})
+                elif avg_polarity < -0.05:
+                    response_data[user].update({'status': "The Video has a Negative response"})
+                else:
+                    response_data[user].update({'status': "The Video has a Neutral response"})
 
-            response_data['positiveComments'] = len(positive_comments)
-            response_data['negativeComments'] = len(negative_comments)
-            response_data['neutralComments'] = len(neutral_comments)
-            # response_data['positiveCommentsList'] = positive_comments
-            # response_data['negativeCommentsList'] = negative_comments
-            # response_data['neutralCommentsList'] = neutral_comments
-            print("Positive comments",len(positive_comments),"Negative comments",len(negative_comments),"Neutral comments",len(neutral_comments))
+            except Exception as e:
+                response_data[user].update({'status': f"Error during processing: {str(e)}"})
+
         background_tasks.add_task(process_comments)
-        return response_data
+        return {"message": "Processing started. Check the result using the /result endpoint.", "user": user}
 
     except Exception as e:
         print(e)
         return {"Error": str(e)}
 
-# if __name__ == '__main__':
-#     import uvicorn
-#     uvicorn.run(app, host="0.0.0.0", port=8000)
+@app.get('/result/{user}')
+async def get_result(user: str):
+    if user in response_data:
+        return response_data[user]
+    else:
+        raise HTTPException(status_code=404, detail="No data found for the user")
+
+if __name__ == '__main__':
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
