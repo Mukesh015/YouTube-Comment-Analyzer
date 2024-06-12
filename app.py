@@ -50,6 +50,7 @@ def fetch_comments(video_id, uploader_channel_id):
         nextPageToken = response.get('nextPageToken')
         if not nextPageToken:
             break
+    response_data['totalComments'] = len(comments)
     return comments
 
 def filter_comments(comments):

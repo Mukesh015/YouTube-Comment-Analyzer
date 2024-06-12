@@ -1,314 +1,39 @@
-that is a fantastic tutorial and just perfect for us to be creative yet have guidance throughout the project! thank you!
-please provide dataset link. am unable to figure it out.
-power query so much easier than regex, but i feel like regex may give more freedom in extreme cases. i am still some what new to the field and have only really dealt with clean data.
-any nfl football projects?
-impressed by great command you have on all this coding work and data analyses--- trying to be on your footsteps
-i found this project to be quite disappointing. it felt more like a brand promotion than a comprehensive tutorial. the instructor didn&#39;t complete the web scraping section and only covered half of the data preprocessing. the most frustrating part was the incomplete power bi segment. while the instructor may be skilled in their field, this course lacks the thorough guidance necessary for teaching.😠😠😠
-sir i&#39;m facing problem to collect the data from the brightdata please help me out to how to collect the data from the any website.
-does anybody knows another tool to scrape data, as this website is not working for me, if you know then please tell me...
-showing access denied for the dashboard building screen record while downloading .
-hello can anyone solve my doubt... i had performed this but the error is occurring while making others folder for measure... can anyone help me!!
-can we use vs code instead of jupyter notebook?
-hello, i &#39;m having trouble in bright data. it&#39;s showing me a chart load error.  how to solve this? can anyone help me in this?
-me ready to lose to get an internship
-i more parameter u need to add avg against sena country (for bowlers and batsman both) thanks like your video
-i seriously don&#39;t know where to find the javascript/html codes of whatever. i would love to start the project but i&#39;m stuck here.
-i am not able to get how to load the datasets into powerbi can anybody help
-edit: i had a question but after watching further i got it haha thank you and love your videos they are very helpful and informative! :)
-why strike rate was not converted in deciamal format
-can we do this project using power bi free version or pro one is required?
-there is no data collector option while i am doing the project could some one help me
-how has the image of players added in excel?
-ahhhh man!! that made me soo interested in data analytics field. hats off!!
-hello sir, just wanted to let you know that as of march 2024, the website makeup has changed and the js code for web scrapping doesn&#39;t work directly, it needs to be tweaked. just putting it out for others too
-where will i find the files as you are mentioning in video again and again
-i am not able to download the  files from the resources. it shows some error called access denied.
-creating dashboard also should be your main focus of your video...just giving template for dashboard , dosen&#39;t make sense. very disappointing ... . i follow your video regularly but this is not fair
-can you provide the link to the website?
-where is a formula excel?
-problem while using brightdata ,brightdata is not give $15 free credits.please reply sir?
-could not find the dax excel in links given... can any one share the link
-i am going to take the course from my next salary , your teaching is just amazing ......<br>i tried lots of courses and gained about 20 to 30%  but even after completing your half video i gained around 100% ....<br>thanks a lot <br>u&#39;re a hero sir !!!!
-join me as an intern🤣🤣
-can you help me find the github link to the html code?
-sir create a project for dream 11 team selector😂
-bright data ui has been modified. i cant find the necessary pages on it.. also the data collection process seems complex.  <br><br>can you please suggest alternate ways.... also i want to do ipl analysis out of this
-42.27
-sir, why am i not getting permission to access the json files?
-@codebasics sir may i know how you scrapped all the images of the players please help me with this
-how do you added players images in power bi
-excellent video sir, your videos always help us learn new concepts very easily, i have one suggestion, you should decrease your drama percentage and try to come on the point straightforwardly.
-can anyone help me with creating data collector because i added all the code given in the web scrapping code but it is not collecting anything and also there is no input files been extracting from that link??
-why does my jupyter notebookthrow this error on executing match_ids_dict[&#39;namibia vs sri lanka&#39;]<br><br>keyerror                                  traceback (most recent call last)<br>cell in[45], line 1<br>----&gt; 1 match_ids_dict[&#39;namibia vs sri lanka&#39;]<br><br>keyerror: &#39;namibia vs sri lanka&#39;
-bright data link is not working.
-i took a different approach and used beautifulsoup to webscrape and create the dataframes. well done with this tutorial!
-sir how created parameters in this vedio plz help fir 😊
-hi<br>on what criteria you have selected top 11 i.e final team ??
-beginning part was hard to watch
-why we have not used distinctcount for innings batted?
-can anyone help with the step where he loads the parse code ??😢
-dataset could be given directly, getting dataset is really very tiring process
-the js code which is given in the link doesn&#39;t work in the bight data. can anyone help me to solve the issue?
-you did everything great we followed your each step. we couldnt build the raw visuals and also the final pbix file doesnt have images of players .
-i&#39;m not getting some error in batting summary as well as in bowling summary in bright data because of the structure has changed. so kindly reply to this if anyone is working on this presently.
-it&#39;s so so much amazing explanation of project i have watched ever..<br>please sir make such more projects !!!<br>i just loved it :)<br>thanks for making such a great video !!!<br>😊🙌🙌
-can you please provide the method for web scraping using python libraries like beautifulsoup instead of making us use a third party application bright data. i think many of us are facing problems using bright data and want to learn python not another application.
-@codebasics i have not received the free 15$ balance
-data collector option is not there in my pc, where data collector option
-can i use tableau instead of powerbi
-the output matchsummary array is returning empty ??
-very innovative ❤😊
-the game changer tutorial. thanks a lot sir ..
-“if you lose, join me as an intern..” perfect..! 😂😂❤
-can you please tell me from where i can find the match result data ?
-very good
-the match details data is getting scraped correctly, but for batting_summary i am not able to get team 1 and team 2. rest all data is coming. so, the match and teaminnings is coming blank.
-it&#39;s an amazing project. thank you team.
-@codebasics.. if someone has taken your excel and powerbi course and wanted to take your bootcamp for only projects than can we go for it?
-i think you should use the no of matches to calculate the super12/super4, semifinal and semi final, <br>by the no of teams and one-to-one matches<br>it would be more genereric and can process multiple data sets
-while trying to get data from website it has different table name and two tr name; code shown in the video is not working, can you help me with that?
-waste of time
-many thanks wanted such like a video which requires data scrapping
-how exactly we have to scrap data becoz i m not able to find same data can anyone help
-can anyone give me what are prerequisites for this project
-i can’t use web scraping sir
-sir i did not get the 15$ balance in my account when i use the link you give in the description what can i do please help
-quick question, 37 minutes in, we get to connecting the batting and match df&#39;s. i curiously printed the number of unique values for &#39;match&#39; from batting and &#39;match_id&#39; from match summary. i did this in case one of the games played in the group stage played again in the knockout stage.  as i thought, there are 42 unique matches in batting df played by team1 and team2, yet 45 match-id&#39;s in the match summary. will this get addressed later in the video? p.s. other than this question, love the tutorial and all the other work on pandas you provide in a playlist. 👍
-cant get 15$ credit on brightdata why?
-$15 dollar credit means real money????🤔 would i be able to withdrawal money
-when i logged in into the bright data, i didn&#39;t get the 15$ credit.
-so the credit link, i believe is expired and the bright data interface is different from what is shown in the video. can anyone reply and help me maneuver around the website?
-didn&#39;t get the 15$ credit
-documentation is available...??
-you have not provided github link where can i see it
-loved the intro
-the coupon is not working anymore it seems, i registered using 2 accounts but not getting $15  in my account
-great very impressive
-can anyone explain why he has used withopen(json.load) instead of read_json because when i try to to do the same steps as explained in the video using read_json its throws error pretty much everwhere like rec[&#39;battingsummary&#39;] by saying it only takes integer output, but the moment i load json file with json.load it runs!<br>please care to explain thanks
-i am trying to enhance my skills in data analyst field. for the same , i want to have live classes. can you please let me know if you provide the live classes??
-best in the world for fun loving learning approach to teach, u are a revolution, dimaag hil gya tarika he project karne ka and educational video banane kaa. thank you codebasic team!
-i am unable to download files as it is showing &quot;access denied&quot;
-data collector is not available
-where can i get the data collection files? the interface is completely changed. i dont see &quot; my scrapers &quot; option available. kindly please help
-for data collection we can sometimes also inspect elements and go to network tab and find the data url bringing the original json file. but i don’t know if that is legal 😂
-unable to access brightdata ... accessing from pakistan :(
-how can we use python  ? for web scrapping
-love frompak sir ur videos have helped me grow in my career pretty quickly
-sir direct start krna h is video se ya pehle kuch course krna h <br>😅
-are bhai koi help kar do jis ka bhi ye run ho gya ho ...
-bro put up a video which algorithm should be used at what time
-hi there , i have tried to do the steps as in this video. but i am struggling in bright data collector. when i am logged in i can not see it.could you please help me with this?
-how to get data from restful api which has &quot;two factor authentication&quot; e.g. maconomy restful api framework.
-can we use it to make teams on dream 11
-data collector is not showing in bright data
-the 3 videos you have provided are without audio ? or is their any fault in my side.
-after watching it completely my first word was marvellous!!!!........ amazing video and explanation infinite likes for the work
-i really appreciate being put on to maximum! that song is a jam!<a href="uckszu2wh9gy1mb0dv-11ujg/ksify6lzfolm6akanydqag"></a>
-what a man this is !!!
-hello sir, can you please explain me the reason for making the &#39;custom batting order&#39; calculated field prior analysing data.
-hi, is it okay to upload github and share in my linkdin profile once i completed this project ?
-sir i m in love with this project.....but how can i convince my guide moreover its a hypothetical situation....end of the when we present this project in front of the guides..they would ask me for real life application...can you please answer this so that i can convince my guide and work for this project.  please your answer matters a lot!!
-great tutorial, by the way the mp4 file in the link you&#39;ve mentioned is displaying some error code,   would be great if u resolve it soon :)
-hi sir thanks so much for the video...<br>but i am not able to retrive the &quot;match_id&quot; using this code <br>df_batting[&quot;match_id&quot;] = df_batting[&quot;match&quot;].map(match_ids_dict)<br>df_batting.head()<br>any clue will be mutch appriciated...
-the data collector is now not available on the platform as shown in the video. please help us regarding that
-the resources link is not working. can anyone help me with the resources?
-@codebasics hello sir, can u explain to scrap data using python instead of using javascript
-sir i open brightdata website from your link and also from google but both time this website is not open why? can you please explain
-the bright code isn&#39;t working now, it seems the html code for the espn server is also being modified, plzz sir help
-i apreciate the fact<br> that you are a good teache but the fact that ur courses are as high as 1600 you shall have applied some analytics sir cz we students in india cant pay you 1600 for a single course :):)
-doubt in first part how you have added. the data therein the bright . collector
-guys is the website js code still working?
-how to add data to the bright data
-not able to properly work on bright data, not able to get  an idea  to  work with it
-prerequisite
-my &quot;match_ids_dict&quot; not mapping idon&#39;t know why! please help
-i cannot find the webpage….can anyone provide the link..
-hi, i am not able to download the csv files can anyone help me with that.?!
-hi , would you please upload any power bi project related to the retail industry because in my interview and resume, i can attach it. it would be helpful for me. i have not experienced in that retail industry related project. would you please help me on that.
-i stuck at bright data it self pls someone helps mee
-area chart showing better average is not getting result as expected. in first page, if we select on buttler, its showing 0 average on match vs india. may be because he did not get out against india, our avg measure is not working properly in that context.
-how to make data collectors ??
-brightdata link isn&#39;t working
-@codebasics i am not able to view the 15$ balance in my account on brightdata. please help ! also the link that is in the video description is incorrect. remove the 23 from that link, then it opens.
-hi, i didn`t receive 15 $ in my account. i followed as you told in video...please help
-for some reason, i didn&#39;t get usd 15 from brightdata. iss it still valid?
-what a unique way of introducing the scenario sir... you are awesome 👍
-i watched entire video. i am new to data analytics . u can consider me a fresher. to be frank ur first few steps of loading cricket data into bright dashboard. i didnt understand a single thing. you shoulg have atleast explained from scratch how to load the data. simply doing &quot;go from here to here then this and then that &quot; didnt make me understand a single thing.
-i cant see 15 dollars
-i&#39;ve been using youtube for gaining knowledge since a min. of 5 years now. this is the worst video i&#39;ve came across in these 5 years. seriously man, you need to change your way of coaching. you really need to do it !!
-some one please help me i am not able to go to user dashboard. i used the link given in desc also created account but the interface of that site is itself very different that what sir is teaching<br>i m confused
-i did not receive 15 credits<br>also i am not seeing data collector option
-.ipynb file is not able to download , just opening a link , not downloading. hii, dhaval sir ,can you provide it!
-can we use this project for our project portfolio ?
-hi @codebasics!<br>thanks for making this video.<br>i tried to register on brightdata with your referral link but my balance is $0. tried with two different accounts.<br><br>any suggestions?<br><br>thanks<br>mohit
-how i scrap data from espn using python
-how to scrap large data using python
-sir i am facing difficulty during scraping i couldn&#39;t identify class engine... any were i tried but its showing with some different name and tr class is also empty $0
-can anyone share the jupyter notebook file? i am not able to download it
-hey, i signed in using the codebasics link provided in the desciption but i didnt get 15$ free credits. what should i do now?
-sir  dashboard_building_screenrecord_1.mp4 is not able to play.....please reply sir.
-can you make a similar project on covid 19 dataset or debt gdp dataset ? for those who don&#39;t have interest in sports
-just a min worth of useful stuff
-i didn&#39;t receive the 15$ credit even though i clicked the link in the description, if you could please help me.
-is it a beginner friendly project? i have zero idea about ml, but i know the programming fundamentals
-this project is incredible! kudos
-for some unknown reason, i did not get the 15$ credit. could you please check the link in the video description?<br><br>also getting this error &quot;[object object]&quot; when trying to download project files from the website.
-i didn&#39;t get $15 credit in my account of brightdata. i went to website through above given link.
-hi sir at present is bright data giving credit sir ? for codebasic students ?
-why are u promoting illuminati with thumbnail
-if you are looking for intern who can help you in data transform and data visualization then please message me that too without paying a single money. looking for more experience in data analysis.
-awesome start :d
-i made an account on bright data but did not get any credits. will there be any problem in completing this project ?
-this video is verry helpful. can u please provide the link of espn website where you get the data from. and brightdata not giving 15$ anymore so please provide any other method of doing this.
-this is fantastic video and best for resume as well. and not to forget at 2.04 min .. that shot of virat kohli to haris rauf .. woow .. excellent .. king kohli at its best.
-em portugues
-this project was incredible! i&#39;m currently doing my ms in data science and i have a two week break between semesters. i thought it would be a perfect time to do a project - and this guide was perfect. i just used american football data instead of cricket!
-this is awesome stuff. what i am really interested in here is mouse hover popup with player image and details. can you plz share video tutorial link how to make that<br><br>thanks in advance
-the brightdata 15$ credit is no longer valid ? i don&#39;t see it on my dashboard when i click the link given in your description
-hi i  didn&#39;t got 15 dollar credit now how to get data
-i can never write that code to extract data .<br>☹️ why i choose to do this coding and stuff
-best learning and fun  video on youtube
-download is getting error please help
-sir we can do for  out or not out  we can get where is blank space at that place we get not out
-@codebasics we are not getting the data from brightdata anymore as there are no free credits, this video has become pointless
-but we ain&#39;t getting any free credits now, so basically this video becomes useless
-hi, can you make a video for web scraping the same data using beautifulsoup? i did it for the first table, as it was very straight forward. but i am facing issue for batting and bowling summary.
-le ab devilliers: i am the alien and i am not in the match
-i dint get the balnc in bright data
-i am not getting the 15$ balance after signing up from the link below. did anyone else face the same problem ? if yes please help me find a solution for ir
-sir need a dataset for the project plz share the link 🔗
-if he really wanted to teach he will use web scraping but he just wanted to promote some websites and earn money <br>a begginer like me tried few times and understood it is a shit
-t20_data processing file is not downloading
-where is word file of other data processing tables??
-sir i got error from calculate boundary values so plss give how i calculate boundary values
-t20_data_preprocessing.ipynb file is not downloading please anybody help me
-sir i tried to build this type of dash board for practice but i want to learn different conditional formatting are applied on the pages plz help kindly provide nay idea to get details in brief
-t20_data_preprocessing.ipynb this file is not downloading,please help me
-i dont get the 15 dollar credit. help.
-video recording attached in not working i am stucked  in between project now i am confused whether should i drop this project or what to do
-sir i am unable to use bright data credit score
-this video is insane it depicts the whole data process in the best way by explaining each single step!
-no free dollars in account now sir please guide sir how to try the project without this bright studio tool
-i am unable to download data from bright data , can anyone guide me?
-can you tell what is the algorithm behind this project
-but i have bee waiting to see the game and how they play, with an opponent, thank you they way you provide the tutorial is amazing
-signed up using the link for the bright data.. didn’t get the free credits
-there is no balance in bright data currently
-why their is no audio in the screen recordings
-@codebasics i am not able to download the data processing notebook. everytime i try to downlaod the file it shows me a txt file rather than ipynb. kindly help me in this regard.
-i didnt got $15 after signing up with codebasics referal.can you please recheck the provided link
-sir, the screen recordings while making the dashboard aren&#39;t available. please provide us with that, so that we could watch, learn and create our own ideas.
-sehwag isn&#39;t playing anymore
-i could not get 15$ free credits. looking for other ways to get data. need help on that
-hii dhaval sir, im unable to find datasets, kindly help me to where can i find datasets to do projects?
-use chatgpt
-i didn&#39;t get the $15 bonus by downloading the link..
-is it using for final year project?
-bright data is not offering the credits, dhaval bro..!
-where are the csv files?
-can a fresher data scientist from commerce background get 25 lpa package ??
-promotional video , time waste for power bi beginners<br><a href="uckszu2wh9gy1mb0dv-11ujg/w8ify_bwafipq7ipvnca2au"></a>
-can you tell me where can i find projects which help me to fund a job in the hedge fund companies. can you make a video about prediction cryptocurrency
-@codebasics bro i cant see any $15 balance in my account even though i used your code basics link from the description also the account status is displaying as suspended, please help
-hi ,<br>there is some issues with this file dashboard_building_screenrecord_1.mp4. unable to play the video .<br>this is first video for the dashboard , if this won&#39;t work then it will be difficult to move further.<br>thanks , i really learnt a lot from your videos
-i am not able to get $15 credit. kindly help please.
-hi,<br>first of all, thank you so much for this end to end project.<br>i am not able to view  or download the first screen recording of dashboard after login.  <br>please resolve the error
-hi, i am using this version: 2.105.664.0 of pbi. unable to open ur given pbx files. any solution.. (i don&#39;t have ms account)
-sir, is learning dax and data modelling necessary or we can skip that part, cus it&#39;s too long
-it seems tough for non-it background students to learn
-i don&#39;t know what is wrong with bright data website, it is asking for all of my information and then saying verify you as not a robot and there is no captcha or anything to verify. weird website
-having a trouble to find the data collector, not showing in the left side
-i have found it&#39;s not a few entries to be filled while creating bright data account. they are asking a lot more than what sir said.<br><br>please correct me if i am doing wrong
-im not able to download files from ur resources
-thankyou dhawal sir you are amazing. your genuine follower from pakistan. you are an inspiration for me.<br>i have a little problem. the brightdata link you have shared is not working for me. canyou please help me
-can someone share me the power bi file of this project as the access in denied
-@codebasics how? to write the &#39;interaction code&#39; and &#39;parser code&#39; for different data set web scraping
-can someone please help me out ? the power bi file on the resources is not getting extracted from the zip file. infact, there is no pbix file in that zip. could you please help me out with this
-sab theek h lakin fresher ko koi nhi leta ... ese ese naadan log lge pde h jinko jaada knowledge bhi nhi .. bs jaankari se .... <br><br>sb bta te h ese ese sikh lo har channel par roadmap dikh jaayega ..lakin kisi ko job nhi milne vaali
-hi,<br>can anyone help me out!<br>i tried downloading the pbix mentioned files from website, after unzipping i do bot find any .pbix file inside.<br>can someone help?
-plz make more videos like this and cover projects on different modules
-tony sharma is gr8<a href="uckszu2wh9gy1mb0dv-11ujg/8gf1xp_zk8jk8gsdri2wcw"></a>, salute to nick puri
-i really like the way you discuss about the specifics and problem statement of the projects...and that&#39;s the proper way to start building any project or app. most of the creators i have seen directly jump to code or what the app does but not focusing on the purpose. love your explaination.
-i learned data analysis i am searching for a project and i think this is the best project to combine all my skills which i learned and also an attractive topic for analysis.
-this is great. i want to do same thing with premier league data. where can i find data for it?
-hello sir, thank you for the informative video.<br>i have a doubt, in brightdata tool by default did you get 15$ or did you pay the amount for that.<br><br>because when i tried logging into the brightdata i could see 0$ as balance
-sir this code is used data scieance students
-just discovered this amazing channel
-crawler error: tunneling socket could not be established, statuscode=407<br>getting this error while trying to fetch match results data using your code
-plz send a link for excel file csv
-the pulp fiction font is spot on!
-there is always an indian who will make it understandable for everybody lol <br>thanks for this video and wish you a happy new year from mexico :) 🎉
-sir i can&#39;t find out the dashboard recording or stage 3 files please help me, i am stuck in power bi page 1 itself
-sir i am getting issue on batsman name and player name tablr. when i put in table both columes so some players name not showing from players name table it showing blank space but they have that name.
-great project sir. <br>please make more such project videos like fifa player analysis , nba performance analysis, player analysis by analysis position he play and move etc..
-hello! thanks for this project a lot. when i ran the data collector for the batting summary extraction, this error came up : &#39;crawler error: navigate validation error: &quot;[0]&quot; is not allowed to be empty.
-this is pretty amazing.
-the scrapping code for the batting numbers in brightdata seems to be having an error.
-please provide the cricket data website names.thank you
-hi sir, your batting average column seems incorrect, if u have time have a look
-the intro was awesome 😅
-how he have launched jupiter please help...
-hi there!<br>if you have web scraping python code, please share me, it will have helpful to everyone.
-showing this error for stage 2 : &quot;crawler error: navigate validation error: &quot;[0]&quot; is not allowed to be empty&quot;<br>what to do ?
-impressive boss!
-links array not collecting any links please help
-if u lose, u join as intern . me as alien:- yess!
-i will apply these concepts but for fifa world cup
-hey, u mentioned in your ml roadmap video that ml engineers r paid 800k to 900k usd in us...where can we find that data? thanks
-sir<br>can i write an article on this project ?
-hi, sir can you please do a video on how to implement rule based using python for any classifier.
-sir can please do some moto racing projects like f1, motogp.  it will also different sports dataset and its near 21 matchdays in every year i think we will get knowledge in racing sports.
-sir thanks for your handwork for building this educative video, please make tutorials explaining the data scraping part, especially the complex one.
-i was very eager to learn but don&#39;t know anything about cricket, sorry lost interest! love all your other videos tho!!
-can we also factor in the pitch report. if it was favourable for a fast bowler then the data for pacers will be skewed and if it was favourable for spinner then data for spinners will be skewed.
-can we leave out peak performance parts of the journey as they are usually outliers for the data.(correct me if i&#39;m wrong)
-can we also factor in the no. of reviews left for third umpire.<br>example:- according to data kohli was out for 39 for a particular match but the thing was he was actually not out and unfortunately india didn&#39;t have a review left.  so even if kohli was not out according to the data he was out for 39 although he could have scored more runs.
-can we also factor in the number of times a player gets injured. <br>example:- bumrah is a really great bowler but he&#39;s often injured so we usually can&#39;t take a player who&#39;s injured half of the time.
-can we also factor in the city or the place where the match took place. playing on home ground always provides an extra advantage to the player.
-can we factor in the team against whom the runs were made or the wickets were taken. like factoring the relative strength of the opponent as compared to other opponents. <br>example:- scoring 200 against australia or england vs scoring 200 against zimbabwe.
-can anyone help in signing up at bright data i am having error please confirm you are not a robot but not showing anything where i can select something that i am not a bot.
-this is truly the dataverse we all were waiting for...truly a place to learn and enjoy the process too... thank you sir and the codebasics team. 🙏
-sir maine aapki site se data analyst ka course liya hai <br>lekin vo enrolled courses me nahi aa raha payment ho chuki hai fir bhi 😢
-thank you is a small word . love you sir. definitely try paid course as well
-sir can please do for football also, it will be a great help for my project
-thanks<br>need more videos like this
-i came here to check if he is really one eyed or not
-fantastic video, but with all due respect, many agree that virat kohli is out of this world, i.e. an alien
-this is fun😃
-thank you, sir,<br><b>sir please teach us how to make  hld and lld  documents for project.</b>
-how to deal with this error?<br>code is same as video<br>crawler error: navigate validation error: &quot;[0]&quot; is not allowed to be empty
-please keep uploading real life projects on weekly basis. thanks in advanced
-how to convert ml model to andriod app ?? sir plzz make video on this topic also thanks
-thank you so much for this.can you please take a session on supplier segmentation based on risk factor of the suppliers
-me encanta tu intro!!!
-thanks for your support
-this is such a cool and fun video! watched it through, can&#39;t wait to go through the project myself
-thank you very much code basics 😊.excellent  visualization and i learned lot of things in videos, salute  sir.!
-yessssir
-we want more contents like this sir
-sir can you make a playlist for azure data engineer with pyspark
-hi sir....while creating a collector for batting summary i am facing an error in second stage interaction code which says &quot;crawler error: navigate validation error:url is required&quot;....i just copy pasted the code u provided
-you&#39;re nailing it in the right spot
-really good 👍
-great!! keep bringing more.
-i got some new ideas to try out now thanks for the video.
-thank you so much
-nice to meet you brogu. 😂😂😂
-wow 🔥🔥🔥
-sir, please make a video on data visualization using tableau
-i just wanted to submit my final year project and i was not getting anything related to data science. but now its seem this is the best video for creating a project. thank you so much it really means a lot😍😍😄
-i just want to thank you dhaval sir!! you are amazing. best ever data analytics video i have ever seen and this shows your dedication and hard work towards this data analytics community.<br>lots of love from bharuch, gujarat sir.<br>and thank you so much sir i am going to participate in this challenge for sure.<br>also thanks to hemanand sir and ashish sir.
-wow...this is what i neded..thanks a bunch sir😇😇
-thank u so much sir for the wonderful session... you are really a great mentor.code basics is the awesome channel for the data learners..
-sir plz  also make video on how to srap data from practo website
-<b>imo the data scraping is too much of a hassle here, you are better off reverse engineering the api end point, you will directly get the data in json format</b>
-thank you!!!
-wow...do this type of vidoes more please....learned a lot today
-thank you codebasics🌸🌸
-will recorded video available or not on channel ?
-have been waiting for this since the announcement 🤩
-i guess christmas comes early for me 😄 the topic i was studying about in front of me as a project
-codebasics is not just a channel its a complete university where a person can learn any technology. <br>thanks dhaval sir
-cant wait for this
-so excited!!!<a href="uckszu2wh9gy1mb0dv-11ujg/ksify6lzfolm6akanydqag"></a>
-salute to codebasics
+hindi m nhi bol sakte the😮
+in this video you said, python is easy language and can be understood by 5th standard students.<br><br><br>let me tell you, due to your very efficient, easy language teaching methodology, my son ,&quot;maahir patel&quot; who is studying in 3rd standard had completed learning of python language followed by numpy, pandas, meyplotlib, scikit learn and more importantly machine learning.....<br><br><br>now, through your video tutorial, he is heading towards, deep learning.....<br><br><br>many thanks to you.<br>good may gives you lots of joy in your life...😊
+python has all concepts that normal langauage has tensorflow api are in python and node so programming is important.
+super work
+he looks so generous.
+first time visitor
+very good explanation sir, you are talking clearly, i can also understand clearly, my research also in deep learning
+can you make a tutorial about multiple instance learning?
+@codebasics (dhaval) do you mind making tutorial on doing machine learning and deep learning using pure cpp, since you are already having the background of the working in cpp and in dl. it will be a  great help for all the learners out there.
+much initiative
+thsnkddd
+meri laptop mai graphic thk nhi hain sir...mai deep learning kaha se sikhuuu
+thank you sir for thinking to make deep learning simple. my question is can i implement regression on data using dl if so which network would you suggest
+thank you
+how is deep learning different from artificial neural network??
+wow!  great job introducing deep learning. i had no idea of google and ai first approach.
+i appreciate the efforts you put into the video and explained cnn in a very simple way. very useful. again thanks a lot.
+hi <br>thanks allot <br><br>do you have a source book that you take your deep learning from it .<br>i will very glad to tell me , if you have one.
+amazing explanation sir
+can you also create tutorial for device drivers,rtos,embedded system design
+practical applications like driver-less cars, have made companies curious to see if they can harness it to deliver a competitive business advantage...
+i thinks dhaval sir is the data science guru more than 10% of upcoming  data scientist in india.
+sir can you please give me your email address
+i can see ur wallet behind, full of money,  seems data scientist is high paying :)
+awesome tutorials, if possible please make a video on installation of tensorflow and pytorch
+amazing content. i am not from computer engineering background. but i am able to understand code basics tutorials. thank you so much.
+thanks for the video... you said in your statement, that python is very easy to learn. please, how can i learn phyton?
+many thanks
+hello sir, your videos are very informative, they are very easy to understand and learn. thank you for starting tutorial on this subject. it would be great if you include one session on how to install any deep learning framework on laptop. that will help us practice.
+kids watch netflix series <br>legends watch codebasics series 😅<br>dhaval bhai thanks for taking this topic <br>definitely following your videos will make such complex topics simpler
+very nice
+let me tell you something sir, i am addicted to your tutorials more than netflix !!!! 😀
+plz upload more videos
+sir please upload deep learning videos as soon as possible
+great job, on every vídeo!
+great videos sir. thanks for the videos. sir, i wanted to work on text to speech synthesis using deep learning. please tell me the minimum hardware requirements for my work.
+me : how much data do you need ?<br>ml : it depends<br>dl  : check with dhaval<br>dp :  watch my new web series deep learning
+great sir, waiting for the video. as you made videos on projects like bengaluru house prediction, sports person classifier, power bi project... plz upload deep learning project videos too at end of this series...
+i would be the first one to join eagerly waiting for the tutorial from the best person on youtube
