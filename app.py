@@ -11,7 +11,10 @@ import asyncio
 
 app = FastAPI()
 load_dotenv()
+app = FastAPI()
+
 origins = ["*"]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -19,6 +22,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
 API_KEY = os.getenv("API_KEY")
 youtube = build('youtube', 'v3', developerKey=API_KEY)
 response_data = {}
@@ -88,7 +93,7 @@ async def analyzed(comment_request: CommentRequest, background_tasks: Background
         video_url = comment_request.videoUrl
         user = comment_request.userName
 
-        # Ensure the user key is initialized
+        
         response_data[user] = {}
 
         regular_pattern = re.compile(r'(?:https?://)?(?:www\.)?(?:youtube\.com/watch\?v=|youtu\.be/)([\w-]+)(?:&\S+)?')
@@ -154,7 +159,7 @@ async def analyzed(comment_request: CommentRequest, background_tasks: Background
                 response_data[user].update({'status': f"Error during processing: {str(e)}"})
 
         background_tasks.add_task(process_comments)
-        return {"message": "Processing started. Check the result using the /result endpoint.", "user": user}
+        return {"message": "Processing started. Check the result click fetch button", "user": user}
 
     except Exception as e:
         print(e)
