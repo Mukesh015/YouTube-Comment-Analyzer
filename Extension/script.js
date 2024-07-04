@@ -10,20 +10,31 @@ document.addEventListener("DOMContentLoaded", function () {
   const username = randomStr(20, "1234567890abcdefghijklmnopqrstuvwxyz");
 
   const showErrorMessage = () => {
-    document.getElementById("error-message").style.display = "block";
-    document.getElementById("positive-percentage").textContent = "N/A";
-    document.getElementById("negative-percentage").textContent = "N/A";
-    document.getElementById("neutral-percentage").textContent = "N/A";
-    document.getElementById("valid-url").textContent = "This is not a valid URL";
-    document.getElementById("fetch-comments-btn").style.display = "none";
+    console.log("Showing error message: Invalid URL");
+    const errorMessage = document.getElementById("error-message");
+    const positivePercentage = document.getElementById("positive-percentage");
+    const negativePercentage = document.getElementById("negative-percentage");
+    const neutralPercentage = document.getElementById("neutral-percentage");
+    const validUrl = document.getElementById("valid-url");
+    const fetchCommentsBtn = document.getElementById("fetch-comments-btn");
+
+    if (errorMessage) errorMessage.style.display = "block";
+    if (positivePercentage) positivePercentage.textContent = "N/A";
+    if (negativePercentage) negativePercentage.textContent = "N/A";
+    if (neutralPercentage) neutralPercentage.textContent = "N/A";
+    if (validUrl) validUrl.textContent = "This is not a valid URL";
+    if (fetchCommentsBtn) fetchCommentsBtn.style.display = "none";
   };
 
   const updateStatus = (message) => {
-    document.getElementById("valid-url").textContent = message;
+    console.log("Updating status: ", message);
+    const validUrl = document.getElementById("valid-url");
+    if (validUrl) validUrl.textContent = message;
   };
 
   const updateComments = (data) => {
     const responseData = JSON.parse(data);
+    console.log("Update comments with data: ", responseData);
 
     const commentsContainer = document.querySelector(".comments-container");
     const posCmtBox = document.querySelector(".pos-cmt");
@@ -35,43 +46,55 @@ document.addEventListener("DOMContentLoaded", function () {
       responseData.negativeComments !== undefined &&
       responseData.neutralComments !== undefined
     ) {
-      document.getElementById("positive-percentage").textContent =
-        (
-          (responseData.positiveComments / responseData.totalComments) *
-          100
-        ).toFixed(2) + "%";
-      document.getElementById("negative-percentage").textContent =
-        (
-          (responseData.negativeComments / responseData.totalComments) *
-          100
-        ).toFixed(2) + "%";
-      document.getElementById("neutral-percentage").textContent =
-        (
-          (responseData.neutralComments / responseData.totalComments) *
-          100
-        ).toFixed(2) + "%";
-      posCmtBox.style.display = "block";
-      negCmtBox.style.display = "block";
-      neutralCmtBox.style.display = "block";
-      document.getElementById("update-status").style.display = "none";
-    } else {
-      posCmtBox.style.display = "none";
-      negCmtBox.style.display = "none";
-      neutralCmtBox.style.display = "none";
+      const positivePercentage = document.getElementById("positive-percentage");
+      const negativePercentage = document.getElementById("negative-percentage");
+      const neutralPercentage = document.getElementById("neutral-percentage");
 
+      if (positivePercentage) {
+        positivePercentage.textContent =
+          (
+            (responseData.positiveComments / responseData.totalComments) *
+            100
+          ).toFixed(2) + "%";
+      }
+      if (negativePercentage) {
+        negativePercentage.textContent =
+          (
+            (responseData.negativeComments / responseData.totalComments) *
+            100
+          ).toFixed(2) + "%";
+      }
+      if (neutralPercentage) {
+        neutralPercentage.textContent =
+          (
+            (responseData.neutralComments / responseData.totalComments) *
+            100
+          ).toFixed(2) + "%";
+      }
+      if (posCmtBox) posCmtBox.style.display = "block";
+      if (negCmtBox) negCmtBox.style.display = "block";
+      if (neutralCmtBox) neutralCmtBox.style.display = "block";
+      const updateStatusEl = document.getElementById("update-status");
+      if (updateStatusEl) updateStatusEl.style.display = "none";
+    } else {
+      if (posCmtBox) posCmtBox.style.display = "none";
+      if (negCmtBox) negCmtBox.style.display = "none";
+      if (neutralCmtBox) neutralCmtBox.style.display = "none";
+
+      const updateStatusEl = document.getElementById("update-status");
       if (responseData.totalComments !== undefined) {
         console.log(responseData.totalComments);
-        document.getElementById(
-          "update-status"
-        ).textContent = `Total comments ${responseData.totalComments} fetched, analyzing comments...`;
+        if (updateStatusEl) {
+          updateStatusEl.textContent = `Total comments ${responseData.totalComments} fetched, analyzing comments...`;
+        }
       } else if (responseData.videoId !== undefined) {
         console.log(responseData.videoId);
-        document.getElementById(
-          "update-status"
-        ).textContent = `Fetching comments from video ID: ${responseData.videoId}`;
+        if (updateStatusEl) {
+          updateStatusEl.textContent = `Fetching comments from video ID: ${responseData.videoId}`;
+        }
       } else {
-        document.getElementById("update-status").textContent =
-          "This is not a valid URL";
+        if (updateStatusEl)
+          updateStatusEl.textContent = "This is not a valid URL";
       }
     }
   };
@@ -120,6 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
             data.status &&
             !data.status.startsWith("Error during processing")
           ) {
+            console.log("Polling result: ", data);
             clearInterval(interval);
             updateComments(JSON.stringify(data));
           } else if (
